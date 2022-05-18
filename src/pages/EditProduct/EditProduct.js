@@ -1,15 +1,22 @@
 import { useEffect, useState } from "react";
+import { useLocation } from "react-router";
 
 function EditProductPage(props) {
-
   const [productToUpdate, setProductToUpdate] = useState(null);
 
   console.log({ productToUpdate });
 
   //TODO: Write code to set the productToUpdateState
-  //with the product data from the location. 
-  // 
+  //with the product data from the location.
+  const location = useLocation();
+  //
   //Use useEffect so that when the location changes
+  useEffect(() => {
+    if (location.state) {
+      const { product } = location.state;
+      setProductToUpdate(product);
+    }
+  }, [location]);
   //you get the product data from the location. See
   //ViewProductPage.js to check
 

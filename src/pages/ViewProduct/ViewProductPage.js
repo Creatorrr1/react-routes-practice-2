@@ -20,7 +20,7 @@ function ViewProductPage(props) {
   }, [location]);
 
   console.log({ product, location });
-  
+
   //When the component first renders, we won't
   //have the product yet
   if (!product) return <div>Loading...</div>;

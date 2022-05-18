@@ -14,8 +14,13 @@ function ProductsPage(props) {
             <li key={index}>
               <h3>{product.name}</h3>
               <p>£{product.price}</p>
-              <Link to={`/products/${product.id}`} state={{ product }}>
-                View Product
+              <div>
+                <Link to={`/products/${product.id}`} state={{ product }}>
+                  View Product
+                </Link>
+              </div>
+              <Link to={`/products/${product.id}/edit`} state={{ product }}>
+                Edit Product
               </Link>
               {/* 
                 TODO: Add a link to the edit page here 
